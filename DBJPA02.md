@@ -1,5 +1,6 @@
 # Java Spring Boot-DBJPA(2)
 
+
 ## Entity 설계
 Entity는 JPA에서 데이터베이스의 테이블에 대응하는 클래스
 - entity에 anotation을 사용하면 테이블 간의 연관관계를 정의할 수 있음.
