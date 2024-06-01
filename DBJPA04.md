@@ -1,5 +1,4 @@
 # Java Spring Boot-DBJPA(4)
-
 ## JPA 실습
 ### 1. Spring project 생성(Gradle)
 ### 2. Spring Data JPA 사용하기 
