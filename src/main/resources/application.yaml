@@ -1,0 +1,50 @@
+server:
+    servlet:
+        encoding:
+            # 한글깨짐 처리
+            force-response: true
+
+# Spring Data Source 설정
+spring:
+    output:
+        ansi:
+            enabled: always
+
+    # 데이터 베이스
+    datasource:
+        # 데이터 베이스의 jdbc url
+        url: jdbc:mysql://127.0.0.1:3306/examplesdb?userSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+        # 데이터 베이스 로그인 사용자 이름
+        username: urstory
+        # 데이터 베이스 로그인 비밀번호 
+        password: u1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    #  데이터 베이스 커넥션
+    jpa:
+        hibernate:
+            # ddl-auto : 데이터베이스 스키마의 자동 생성 및 업데이트 동작을 제어하는 설정
+            # true로 설정 : 애플리케이션 실행 중에 데이터베이스 테이블을 자동으로 생성하거나 업데이트할 수 있도록 허용
+            ddl-auto: update
+        properties:
+            hibernate:
+                show_sql: true  # 콘솔에 출력
+                format_sql: true    # 표기 편하게 설정
+
+    # mustache (1. 루트폴더 변경, 2. 타임리프 캐시 설정 변경)
+    mustache:
+        prefix: classpath:templates/
+        check-template-location: true
+        suffix: .html
+        servlet:
+            cache: false
+            # session에 저장한 userId를 사용하기 위함
+            expose-session-attributes: true
+
+    mvc:
+        static-path-pattern: /static/**
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
